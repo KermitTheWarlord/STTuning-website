@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 227 10% 39%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 227 10% 44%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 227 10% 39%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 227 10% 39%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+    --card: 227 10% 39%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 227 10% 39%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 227 10% 44%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 227 10% 34%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 227 10% 39%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 227 10% 44%;
+    --input: 227 10% 44%;
+    --ring: 227 10% 39%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+}
+
+.hero-pattern {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled-1_cleanup%20(2)-DeUGLHyBG3rznMyjAPwOb8YFozzCVO.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.slate-pattern {
+  background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled-1_cleanup%20(2)-DeUGLHyBG3rznMyjAPwOb8YFozzCVO.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.blend-bg {
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.logo-blend {
+  mix-blend-mode: screen;
+  opacity: 0.9;
+}
