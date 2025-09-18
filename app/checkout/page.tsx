@@ -10,11 +10,12 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useRouter } from "next/navigation"
-import { toast } from "@/components/ui/use-toast"
+import { useToast } from "@/components/ui/use-toast"
 
 export default function CheckoutPage() {
   const { cart, getCartTotal, clearCart } = useCart()
   const router = useRouter()
+  const { toast } = useToast()
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",

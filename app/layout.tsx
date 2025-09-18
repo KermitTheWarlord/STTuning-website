@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { ClientLayout } from "@/components/client-layout"
+import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     locale: "en",
     type: "website",
   },
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 async function runMigration() {
@@ -42,7 +43,10 @@ export default async function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={inter.className}>
-        <ClientLayout>{children}</ClientLayout>
+        <ClientLayout>
+          {children}
+          <Toaster />
+        </ClientLayout>
       </body>
     </html>
   )

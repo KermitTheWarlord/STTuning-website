@@ -17,12 +17,10 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { useToast } from "@/components/ui/use-toast"
-import { useLanguage } from "@/lib/LanguageContext"
 
 export function BookConsultationModal() {
   const [isLoading, setIsLoading] = useState(false)
   const { toast } = useToast()
-  const { t } = useLanguage()
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -34,8 +32,8 @@ export function BookConsultationModal() {
 
     setIsLoading(false)
     toast({
-      title: t("consultationBooked"),
-      description: t("consultationBookedDescription"),
+      title: "Consultation Booked",
+      description: "We'll contact you soon to schedule your consultation.",
     })
   }
 
@@ -43,44 +41,46 @@ export function BookConsultationModal() {
     <Dialog>
       <DialogTrigger asChild>
         <Button size="lg" className="text-lg">
-          {t("bookConsultation")}
+          Book Consultation
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>{t("bookConsultation")}</DialogTitle>
-          <DialogDescription>{t("bookConsultationDescription")}</DialogDescription>
+          <DialogTitle>Book Consultation</DialogTitle>
+          <DialogDescription>
+            Fill out the form below and we'll contact you to schedule your consultation.
+          </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit}>
           <div className="grid gap-4 py-4">
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="name" className="text-right">
-                {t("name")}
+                Name
               </Label>
               <Input id="name" className="col-span-3" required />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="email" className="text-right">
-                {t("email")}
+                Email
               </Label>
               <Input id="email" type="email" className="col-span-3" required />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="phone" className="text-right">
-                {t("phone")}
+                Phone
               </Label>
               <Input id="phone" type="tel" className="col-span-3" required />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="message" className="text-right">
-                {t("message")}
+                Message
               </Label>
               <Textarea id="message" className="col-span-3" />
             </div>
           </div>
           <DialogFooter>
             <Button type="submit" disabled={isLoading}>
-              {isLoading ? t("booking") : t("bookNow")}
+              {isLoading ? "Booking..." : "Book Now"}
             </Button>
           </DialogFooter>
         </form>

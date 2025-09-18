@@ -13,7 +13,6 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Upload, Mail, Car, Loader2 } from "lucide-react"
 import { useToast } from "@/components/ui/use-toast"
-import { Toaster } from "@/components/ui/toaster"
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024 // 10MB
 const ACCEPTED_FILE_TYPES = [
@@ -248,7 +247,6 @@ export default function TuneRequestPage() {
         </div>
       </main>
       <SiteFooter />
-      <Toaster />
     </>
   )
 }
